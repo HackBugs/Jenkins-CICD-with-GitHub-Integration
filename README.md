@@ -31,7 +31,7 @@ Step -3 Start jenkins
  Step - 4 Open port 8080 from AWS Console:
 
  ## instnce security > Security gorup > give the access of "custom TCP" prot of 8080
- ## Now with this prot you open your jenkins homepage on you brouser tab - and copy the password path and on AWS instace CLI - Paste like cd path 
+ # Now with this prot you open your jenkins homepage on you brouser tab - and copy the password path and on AWS instace CLI - Paste like cd path 
  and read path cat path now copy password paste browser tab jenkins box and enter now choose "install suggested plugins"
  ## Now on jenkins "create first admin user" and choose which requremnt details done! now jenkins ready to use
 
