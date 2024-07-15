@@ -60,37 +60,48 @@ Just copy these commands and paste them onto your terminal.
 
  user sudo apt and pkg name whatever you want to install
  Now install node Js
+ ```sh
  sudo apt install nodejs
  sudo apt install npm
-
+```
  ### Now install Docker to make container
  ### if you want to remove existing docker file use this cmd - sudo rm dockerfile
 
  install docker AWS instance cmd - sudo apt install docker.io
  go on path where you want to make "dockerfile" cmd - sudo vi dockerfile
  ### use this script
- 
+ ```sh
  FROM node:12.2.0-alpine
  WORKDIR app
  COPY . .
  RUN npm install
  EXPOSE 8000
  CMD ["node","app.js"]
-
+```
  ## after create docker file now turn to "build" make a "image" and make docker container 
- ## cmd - sudo usermod -a -G docker $USER
- ## cmd - sudo reboot
- ## cmd - docker build . -t container 
+ ## cmd - 
+ ```sh
+ sudo usermod -a -G docker $USER
+```
+ ## cmd - 
+ ```sh
+ sudo reboot
+ ```
+ ## cmd - 
+ ```sh
+ docker build . -t container
+```
 
  ### after Build container use cmd - docke run -d --name container-name -p 8000:8000 container-name
  Now run application by docker on webpage with ip address and port no
 
  ## Automate pipeline
  Jenkins build steps > Excute shell, Paste in shell box your shell excutable code
-
+```sh
  docker build . -t node-app-todo
  sudo usermod -a -G docker $USER
  docker run -d --name node-todo-container -p 8000:8000 todo-node-app
+```
  
  ### Before click on Build now run this cmd on AWS instance cli -  sudo systemctl restart jenkins now click on build now
  ### before use web-hooks do some setting on github repo setting > webhooks > payload URL > paste jenkins ip addres and port which you using to access
@@ -112,11 +123,12 @@ sudo apt update
    11  sudo systemctl status jenkins
    12  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
    13  history
-
+```sh
 Got to jenkins job
 Execute shell 
 docker build . -t node-app-todo
 docker run -d --name node-app-container -p 8000:8000 node-app-todo
+```
 --------------------------------------------------------------------------------------------------
 
 
