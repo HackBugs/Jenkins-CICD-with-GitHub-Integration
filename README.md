@@ -1,6 +1,6 @@
 - Jenkins-CICD-with-GitHub-Integration
-- **Author : HackBugs - Shahnwaj Aalam
-- **App name : node-todo-cicd
+-- Author : HackBugs - Shahnwaj Aalam
+-- App name : node-todo-cicd
 
 - - First requrement 
 -------------------------
