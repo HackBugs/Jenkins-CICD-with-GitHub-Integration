@@ -63,12 +63,12 @@ Just copy these commands and paste them onto your terminal.
  sudo apt install nodejs
  sudo apt install npm
 ```
- - **Now install Docker to make container
- - **if you want to remove existing docker file use this cmd - sudo rm dockerfile
+ - Now install Docker to make container
+ - if you want to remove existing docker file use this cmd - sudo rm dockerfile
 
  install docker AWS instance cmd - sudo apt install docker.io
  go on path where you want to make "dockerfile" cmd - sudo vi dockerfile
- - **use this script
+ - use this script
  ```sh
  FROM node:12.2.0-alpine
  WORKDIR app
@@ -77,7 +77,7 @@ Just copy these commands and paste them onto your terminal.
  EXPOSE 8000
  CMD ["node","app.js"]
 ```
- - **after create docker file now turn to "build" make a "image" and make docker container 
+ - After create docker file now turn to "build" make a "image" and make docker container 
  - cmd - 
  ```sh
  sudo usermod -a -G docker $USER
@@ -91,10 +91,10 @@ Just copy these commands and paste them onto your terminal.
  docker build . -t container
 ```
 
- - **after Build container use cmd - docke run -d --name container-name -p 8000:8000 container-name
+ - after Build container use cmd - docke run -d --name container-name -p 8000:8000 container-name
  Now run application by docker on webpage with ip address and port no
 
- - **Automate pipeline
+ - Automate pipeline
  Jenkins build steps > Excute shell, Paste in shell box your shell excutable code
 ```sh
  docker build . -t node-app-todo
@@ -102,15 +102,15 @@ Just copy these commands and paste them onto your terminal.
  docker run -d --name node-todo-container -p 8000:8000 todo-node-app
 ```
  
- - **Before click on Build now run this cmd on AWS instance cli -  sudo systemctl restart jenkins now click on build now
- - **before use web-hooks do some setting on github repo setting > webhooks > payload URL > paste jenkins ip addres and port which you using to access
+ - Before click on Build now run this cmd on AWS instance cli -  sudo systemctl restart jenkins now click on build now
+ - before use web-hooks do some setting on github repo setting > webhooks > payload URL > paste jenkins ip addres and port which you using to access
  when you add any new URL for access make sure you in EC2 instance > securities add access port number 
- - **jenkins-plugin-name = github intigration, we known as also web-hooks plugin use in between "github and jenkins" for when developer change any code on github than on jenkins 
+ - jenkins-plugin-name = github intigration, we known as also web-hooks plugin use in between "github and jenkins" for when developer change any code on github than on jenkins 
  ---------------------- Done ------------------------
  
 --------------------------------------------------------------------------------------------------------------
-- **Create AWS EC2 instance / Now cleck on connect to get CLI of AWS instance
-- **sudo apt update
+- Create AWS EC2 instance / Now cleck on connect to get CLI of AWS instance
+- sudo apt update
      - sudo apt install openjdk-11-jre
      - java -version
      - curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee \   /usr/share/keyrings/jenkins-keyring.asc > /dev/null 
