@@ -1,9 +1,8 @@
-# Jenkins-CICD-with-GitHub-Integration
-
-Author : HackBugs - Shahnwaj Aalam
+Jenkins-CICD-with-GitHub-Integration
+##Author : HackBugs - Shahnwaj Aalam
 App name : node-todo-cicd
 
-## - First requrement 
+- - First requrement 
 -------------------------
 - Github code of doveloper
 - AWS EC2 create instance / give name of instance and select OC which you want to like Ubuntu and also create Key-pair-name 
@@ -11,7 +10,7 @@ if you using linux than select .pem and for windows .ppk and select security gro
 -Docker 
 - Jenkins CI / CD
 
-## - Install jenkins on AWS
+- - Install jenkins on AWS
 Step - 1 Install Java
 - Update your system
   ```sh
@@ -49,14 +48,14 @@ Just copy these commands and paste them onto your terminal.
 
 - **Step - 4 Open port 8080 from AWS Console:
 
- ### instnce security > Security gorup > give the access of "custom TCP" prot of 8080
- ### Now with this prot you open your jenkins homepage on you brouser tab - and copy the password path and on AWS instace CLI - Paste like cd path 
+- **instnce security > Security gorup > give the access of "custom TCP" prot of 8080
+- ** Now with this prot you open your jenkins homepage on you brouser tab - and copy the password path and on AWS instace CLI - Paste like cd path 
  and read path cat path now copy password paste browser tab jenkins box and enter now choose "install suggested plugins"
- ### Now on jenkins "create first admin user" and choose which requremnt details done! now jenkins ready to use
+ - ** Now on jenkins "create first admin user" and choose which requremnt details done! now jenkins ready to use
 
- ### Create on jenins "New item name" write discription and give project URL and for password generate/create from AWS instance cli - cmd =  ssh-keygen (private key/public key)
+ - **Create on jenins "New item name" write discription and give project URL and for password generate/create from AWS instance cli - cmd =  ssh-keygen (private key/public key)
  go github setting > SSH Keys - and now add here "public key" in jenkins select github and paste "private key"
- ### on jenkins click "Build now" now git code deply on AWS Ubuntu instance copy path and check after build
+ - **on jenkins click "Build now" now git code deply on AWS Ubuntu instance copy path and check after build
 
  user sudo apt and pkg name whatever you want to install
  Now install node Js
@@ -64,12 +63,12 @@ Just copy these commands and paste them onto your terminal.
  sudo apt install nodejs
  sudo apt install npm
 ```
- ### Now install Docker to make container
- ### if you want to remove existing docker file use this cmd - sudo rm dockerfile
+ - **Now install Docker to make container
+ - **if you want to remove existing docker file use this cmd - sudo rm dockerfile
 
  install docker AWS instance cmd - sudo apt install docker.io
  go on path where you want to make "dockerfile" cmd - sudo vi dockerfile
- ### use this script
+ - **use this script
  ```sh
  FROM node:12.2.0-alpine
  WORKDIR app
@@ -78,24 +77,24 @@ Just copy these commands and paste them onto your terminal.
  EXPOSE 8000
  CMD ["node","app.js"]
 ```
- ## after create docker file now turn to "build" make a "image" and make docker container 
- ## cmd - 
+ - **after create docker file now turn to "build" make a "image" and make docker container 
+ - cmd - 
  ```sh
  sudo usermod -a -G docker $USER
 ```
- ## cmd - 
+ - cmd - 
  ```sh
  sudo reboot
  ```
- ## cmd - 
+ - cmd - 
  ```sh
  docker build . -t container
 ```
 
- ### after Build container use cmd - docke run -d --name container-name -p 8000:8000 container-name
+ - **after Build container use cmd - docke run -d --name container-name -p 8000:8000 container-name
  Now run application by docker on webpage with ip address and port no
 
- ## Automate pipeline
+ - **Automate pipeline
  Jenkins build steps > Excute shell, Paste in shell box your shell excutable code
 ```sh
  docker build . -t node-app-todo
@@ -103,11 +102,11 @@ Just copy these commands and paste them onto your terminal.
  docker run -d --name node-todo-container -p 8000:8000 todo-node-app
 ```
  
- ### Before click on Build now run this cmd on AWS instance cli -  sudo systemctl restart jenkins now click on build now
- ### before use web-hooks do some setting on github repo setting > webhooks > payload URL > paste jenkins ip addres and port which you using to access
+ - **Before click on Build now run this cmd on AWS instance cli -  sudo systemctl restart jenkins now click on build now
+ - **before use web-hooks do some setting on github repo setting > webhooks > payload URL > paste jenkins ip addres and port which you using to access
  when you add any new URL for access make sure you in EC2 instance > securities add access port number 
- ### jenkins-plugin-name = github intigration, we known as also web-hooks plugin use in between "github and jenkins" for when developer change any code on github than on jenkins 
- ############################################ Done ################################################
+ - **jenkins-plugin-name = github intigration, we known as also web-hooks plugin use in between "github and jenkins" for when developer change any code on github than on jenkins 
+ ---------------------- Done ------------------------
  
 --------------------------------------------------------------------------------------------------------------
 Create AWS EC2 instance / Now cleck on connect to get CLI of AWS instance
