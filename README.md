@@ -46,8 +46,7 @@ Just copy these commands and paste them onto your terminal.
   sudo systemctl enable jenkins
   sudo systemctl start jenkins
   sudo systemctl status jenkins
-```
-```
+
 - **Step - 4 Open port 8080 from AWS Console:
 
  ### instnce security > Security gorup > give the access of "custom TCP" prot of 8080
